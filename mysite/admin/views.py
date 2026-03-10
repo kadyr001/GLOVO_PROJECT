@@ -45,6 +45,5 @@ class ReviewAdmin(ModelView, model=Review):
 class StoreAdmin(ModelView, model=Store):
     column_list = [Store.store_menu, Store.store_name, Store.store_image]
 
-
 class StoreMenuAdmin(ModelView, model=StoreMenu):
     column_list = [StoreMenu.store_menu, StoreMenu.store_id]

@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 import uvicorn
-from mysite.api import category,contact,courier_product,order,product,review,store,storemenu,users,cart,cart_item
+from mysite.api import category,contact,courier_product,order,product,review,store,storemenu,users,cart,cart_item, auth
 from mysite.admin.setup import setup_admin
 
 
-mysite = FastAPI()
+mysite = FastAPI(title="Glovo_kg")
 mysite.include_router(users.user_router)
 mysite.include_router(category.category_router)
 mysite.include_router(contact.contact_router)
@@ -16,6 +16,7 @@ mysite.include_router(store.store_router)
 mysite.include_router(storemenu.store_menu_router)
 mysite.include_router(cart_item.cart_item_router)
 mysite.include_router(cart.cart_router)
+mysite.include_router(auth.auth_router)
 setup_admin(mysite)
 
 if __name__ == '__main__':
